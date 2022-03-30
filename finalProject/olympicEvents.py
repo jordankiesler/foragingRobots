@@ -21,7 +21,7 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
     :return: None
     """
 
-    runNumber = 0       # Run number - manually set for each trial - saves to data.txt to distinguish data
+    runNumber = 5       # Run number - manually set for each trial - saves to dataRoundOne.txt to distinguish data
 
     all_robots = []     # A list to hold all of the robots (for postprocessing)
     all_ts = []         # A list to hold all time steps (for postprocessing)
@@ -35,7 +35,7 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     print("\n\n------------BEGINNING OF FIGHT----------\n\n")
 
-    animate = True      # Whether or not to animate the fight
+    animate = False      # Whether or not to animate the fight
 
     # run the simulation once, with the given parameters
     ts, robots, pellets = runFightSim(screen_width=700, controller=controllers, animate=animate,
@@ -100,7 +100,6 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     all_robots = []
     all_ts = []
-    animate = False
 
     for troll in controllers:
         troll.reset()           # Reset the current controller to default values (doesn't affect evolved portion)
@@ -131,7 +130,6 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     all_robots = []
     all_ts = []
-    animate = False
 
     for troll in controllers:
         troll.reset()
@@ -163,7 +161,6 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     all_robots = []  # A list to hold all of the robots (for postprocessing)
     all_ts = []  # A list to hold all time steps (for postprocessing)
-    animate = False
 
     field_of_view = 0.8 * np.pi
     left_sensor_angle = np.pi / 9
@@ -199,7 +196,6 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     all_robots = []  # A list to hold all of the robots (for postprocessing)
     all_ts = []  # A list to hold all time steps (for postprocessing)
-    animate = False
 
     field_of_view = 0.8 * np.pi
     left_sensor_angle = np.pi / 3
@@ -236,7 +232,6 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
 
     all_robots = []
     all_ts = []
-    animate = True
 
     for troll in controllers:
         troll.reset()
@@ -737,8 +732,8 @@ def runNoiseSim(screen_width, controller, animate=True, field_of_view=0.8 * np.p
     # Lower "brightness" of pellet by half
     foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=2020)
 
-    controller.left_noisemaker = BrownNoiseSource(5)
-    controller.right_noisemaker = BrownNoiseSource(5)
+    controller.left_noisemaker = BrownNoiseSource(2)
+    controller.right_noisemaker = BrownNoiseSource(2)
 
     # create robot
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=foodPellets,

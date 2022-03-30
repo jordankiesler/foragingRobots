@@ -3,6 +3,8 @@ import numpy as np
 import sys
 import settings as st
 
+import geneticController as gc
+
 sys.path.insert(1, '..')
 from situsim_extensions.plots2 import *
 
@@ -19,9 +21,11 @@ def do_plots(all_ts, agents, foods_and_poisons):
     plt.rcParams["font.weight"] = "bold"
 
     plot_all_agents_trajectories(all_ts, agents, foods_and_poisons, draw_agents=False)
-    plot_all_robots_motors(all_ts, agents)
-    plot_all_robots_controllers(all_ts, agents)
-    plot_all_robots_sensors(all_ts, agents)
+
+    # I didn't use the ones below, but you theoretically could
+    # plot_all_robots_motors(all_ts, agents)
+    # plot_all_robots_controllers(all_ts, agents)
+    # plot_all_robots_sensors(all_ts, agents)
 
     plt.show()
 
@@ -48,7 +52,7 @@ def plotPhaseSpace(allRobots, title):
     plt.xlabel("Velocity")
     plt.ylabel("Acceleration")
 
-    plt.show()
+    # plt.show()
 
 
 def plot3DSpace(allRobots):
@@ -123,7 +127,7 @@ def calculateScores(scores):
 
 def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circleFit, checkNov, checkFit, shiftNov,
                shiftFit, killNov, killFit, noiseNov, noiseFit, trolls):
-    # Record all relevant info for a run of the olympics and save it to data.txt
+    # Record all relevant info for a run of the olympics and save it to data____.txt
     # :param ___Nov: The foraging scores of the population of novelty search robots for each event
     # :param ___Fit: The foraging scores of the population of fitness search robots for each event
     # :param runNum: What run number it was (to keep track of trials and associate with plots)
@@ -183,10 +187,13 @@ def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circ
            f"Controller Scores Fitness:\n" \
            f"{[[y[1] for y in x.allScores] for x in trolls if x.nov is False]}\n" \
            f"{[x.allScores for x in trolls if x.nov is False]} \n\n" \
-           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is False])}\n"
+           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is False])}\n" \
+           f"Average Number of Active Nodes:\n" \
+           f"Novelty: {gc.calculateAvgActiveNodes([x for x in trolls if x.nov is True])}" \
+           f"Fitness: {gc.calculateAvgActiveNodes([x for x in trolls if x.nov is False])}"
 
-    # Save text to a file called data.txt
-    with open("data.txt", "a+") as file:
+    # Save text to a file called dataRoundTwo.txt
+    with open("dataRoundTwo.txt", "a+") as file:
         # Move read cursor to the start of file.
         file.seek(0)
         # If file is not empty then append '\n'

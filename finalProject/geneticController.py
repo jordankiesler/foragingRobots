@@ -282,6 +282,8 @@ def evolve(pop, robots, mutRate, numParents, numChildren, novelty=True):
     if len(goodBots) == 0:
         mutRate = 0.5
         parents = random.choices(pop, k=numParents)
+        for x in pop:
+            del x
     # If there's at least one decent bot, proceed normally
     else:
         # Slice off the fittest numParents for each category to be parents of the next generation

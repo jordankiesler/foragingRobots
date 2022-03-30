@@ -56,10 +56,10 @@ class Novelty:
         self.allNoveltyScores.append([robot.controller.novelty for robot in pop])
 
         # Print relevant values to the terminal
-        print(f"ROBOT SCORES,  generation {generation}:")
-        print("Behavior scores:", currentBehScores)
-        print("Novelty scores:", [round(robot.controller.novelty, 3) for robot in pop])
-        print("Archive Scores:", [[x[0], x[1], round(x[2], 2)] for x in self.behArchive])
+        # print(f"ROBOT SCORES,  generation {generation}:")
+        # print("Behavior scores:", currentBehScores)
+        # print("Novelty scores:", [round(robot.controller.novelty, 3) for robot in pop])
+        # print("Archive Scores:", [[x[0], x[1], round(x[2], 2)] for x in self.behArchive])
 
     def updateArchive(self, combinedScores):
         """

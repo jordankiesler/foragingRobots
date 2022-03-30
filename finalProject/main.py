@@ -111,7 +111,7 @@ def runSimOnce(screen_width, controller, animate=True, field_of_view=0.8 * np.pi
     for robot in agents:
         robot.setBehScore()
         robot.controller.fitness = robot.foodEaten
-        print("Score:", robot.behScore, "Foods:", robot.foodEaten, "Poison:", robot.poisonEaten,
+        print("Score:", (robot.behScore[0], robot.behScore[1], round(robot.behScore[2], 2)), "Foods:", robot.foodEaten, "Poison:", robot.poisonEaten,
               "Energy:", round(robot.energy, 2), "Novelty:", novelty)
 
     return ts, agents, allPellets
@@ -134,6 +134,7 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
 
     # Initialize the starting population of robots - each are gp.Individual() objects
     population = gc.createPopulation(popSize)
+    originalPop = population
     # Create a novelty object - does the novelty score calculations and stores the novelty archive
     novelty = nv.Novelty()
 
@@ -185,6 +186,7 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
             # If any robot met initial olympic qualifications and the team is not yet filled out, make sure it
             # wasn't a fluke by testing it again on the same course with the same controller
             if robot.foodEaten >= foodThresh and len(goodBots) < (numGoodNovBots + numGoodFitBots):
+                print("Re-run of Good Bots:")
                 _, newRobot, _ = runSimOnce(screen_width=700, controller=robot.controller, animate=animate,
                                             field_of_view=field_of_view, left_sensor_angle=left_sensor_angle,
                                             right_sensor_angle=right_sensor_angle, duration=duration,
@@ -202,7 +204,7 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
         if nov and len(goodBots) >= numGoodNovBots:
             nov = False
             goodBots = goodBots[:numGoodNovBots]
-            population = gc.createPopulation(popSize)
+            population = originalPop
         # If the number of fitness bots for the olympic team has been filled out, stop evolving and start the olympics!
         if not nov and len(goodBots) >= (numGoodNovBots + numGoodFitBots):
             goToOlympics = True
@@ -213,16 +215,19 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
     goodNovBots = [x for x in novBots if x.foodEaten >= 10]
     goodFitBots = [x for x in fitBots if x.foodEaten >= 10]
 
+    print("Mean active nodes for novBots:", gc.calculateAvgActiveNodes([x.controller for x in novBots]), "Good nov bots:", gc.calculateAvgActiveNodes([x.controller for x in goodNovBots]),
+          "fitBots:", gc.calculateAvgActiveNodes([x.controller for x in fitBots]), "Good fit bots:", gc.calculateAvgActiveNodes([x.controller for x in goodFitBots]))
+
     # Plot the 2D and 3D phase spaces of all the bots
     pp.plotPhaseSpace(novBots, "All Novelty Robots")
     pp.plotPhaseSpace(fitBots, "All Fitness Robots")
     pp.plotPhaseSpace(goodNovBots, "\nAdapted Novelty Robots")
     pp.plotPhaseSpace(goodFitBots, "\nAdapted Fitness Robots")
-
-    pp.plot3DSpace(novBots)
-    pp.plot3DSpace(fitBots)
-    pp.plot3DSpace(goodNovBots)
-    pp.plot3DSpace(goodFitBots)
+    plt.show()
+    # pp.plot3DSpace(novBots)
+    # pp.plot3DSpace(fitBots)
+    # pp.plot3DSpace(goodNovBots)
+    # pp.plot3DSpace(goodFitBots)
 
     # BEGIN THE OLYMPICS!!!
     oe.runEvents(goodBots, field_of_view, left_sensor_angle, right_sensor_angle, duration)
@@ -230,5 +235,5 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
 
 # Run the simulation
 if __name__ == "__main__":
-    runSim(popSize=20, animate=True, numGoodNovBots=st.NUM_NOV_BOTS,
+    runSim(popSize=20, animate=False, numGoodNovBots=st.NUM_NOV_BOTS,
            numGoodFitBots=st.NUM_FIT_BOTS, foodThresh=st.FOOD_THRESH)
