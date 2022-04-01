@@ -16,11 +16,12 @@ from situsim_extensions.arena import *
 
 # Runs the entirety of each simulation once - launched from run_sim
 def runSimOnce(screen_width, controller, animate=True, field_of_view=0.8 * np.pi, left_sensor_angle=np.pi / 3,
-               right_sensor_angle=-np.pi / 3, duration=100, generation=0, novelty=False):
+               right_sensor_angle=-np.pi / 3, duration=100, generation=0, novelty=False, seed=42):
     """
     Run the simulation once - in this main loop,
     for only one robot at a time as we evolve populations
     to forage successfully
+    :param seed: Random seed for pellet generation
     :param screen_width: Obviously - the width of the screen
     :param controller: Controller object to put in robot - this is what we're evolving
     :param animate: Boolean to animate simulation
@@ -40,7 +41,7 @@ def runSimOnce(screen_width, controller, animate=True, field_of_view=0.8 * np.pi
 
     # Create a random set of 25 food pellets in a centered, 10x10 space in the arena
     # (using a random seed to maintain consistency in training)
-    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=3820)
+    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=seed)
 
     # Create a foragingRobot object with the appropriate parameters
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=foodPellets,
@@ -111,7 +112,7 @@ def runSimOnce(screen_width, controller, animate=True, field_of_view=0.8 * np.pi
     for robot in agents:
         robot.setBehScore()
         robot.controller.fitness = robot.foodEaten
-        print("Score:", (robot.behScore[0], robot.behScore[1], round(robot.behScore[2], 2)), "Foods:", robot.foodEaten, "Poison:", robot.poisonEaten,
+        print("Score:", (robot.behScore[0], robot.behScore[1], round(robot.behScore[2], 2)), "Foods:", robot.foodEaten,
               "Energy:", round(robot.energy, 2), "Novelty:", novelty)
 
     return ts, agents, allPellets
@@ -190,7 +191,7 @@ def runSim(popSize=1, animate=True, numGoodNovBots=10, numGoodFitBots=10, foodTh
                 _, newRobot, _ = runSimOnce(screen_width=700, controller=robot.controller, animate=animate,
                                             field_of_view=field_of_view, left_sensor_angle=left_sensor_angle,
                                             right_sensor_angle=right_sensor_angle, duration=duration,
-                                            generation=g, novelty=nov)
+                                            generation=g, novelty=nov, seed=random.randint(1, 500000))
                 # If a new robot with the same controller succeeds again, add a copy of the controller to the list of
                 # goodBots and reset it (method in base class) to wipe its memory
                 if newRobot[0].foodEaten >= foodThresh:

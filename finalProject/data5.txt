@@ -1,0 +1,331 @@
+----RUN 4---
+Population Size: 20
+
+Fight Novelty:
+[4, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+(8, 2, 0)
+Fight Fitness:
+[1, 4, 1, 0, 0, 0, 6, 4, 0, 3]
+(4, 5, 1)
+
+Fight 2 Novelty:
+[12, 2, 0, 2, 2, 0, 0, 2, 3, 4]
+(3, 6, 1)
+Fight 2 Fitness:
+[2, 6, 5, 0, 2, 0, 6, 1, 0, 0]
+(4, 4, 2)
+
+Circle Novelty:
+[0, 0, 0, 5, 0, 0, 1, 0, 0, 0]
+(8, 2, 0)
+Circle Fitness:
+[24, 0, 1, 1, 11, 14, 23, 0, 0, 0]
+(4, 4, 2)
+
+Check Novelty:
+[24, 20, 7, 10, 22, 8, 9, 10, 17, 21]
+(0, 5, 5)
+Check Fitness:
+[19, 19, 13, 12, 14, 3, 21, 16, 11, 6]
+(0, 6, 4)
+
+Shift Novelty:
+[0, 8, 2, 0, 0, 5, 3, 12, 4, 1]
+(3, 7, 0)
+Shift Fitness:
+[14, 9, 8, 1, 5, 2, 11, 3, 2, 0]
+(1, 9, 0)
+
+Kill Novelty:
+[4, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+(8, 2, 0)
+Kill Fitness:
+[0, 0, 0, 0, 0, 5, 0, 0, 0, 0]
+(9, 1, 0)
+
+Noise Novelty:
+[10, 17, 1, 0, 2, 2, 1, 10, 0, 4]
+(2, 7, 1)
+Noise Fitness:
+[0, 6, 6, 0, 1, 3, 0, 4, 9, 1]
+(3, 7, 0)
+
+
+Controller Scores Novelty:
+[[4, 12, 0, 24, 0, 4, 10], [2, 2, 0, 20, 8, 1, 17], [0, 0, 0, 7, 2, 0, 1], [0, 2, 5, 10, 0, 0, 0], [0, 2, 0, 22, 0, 0, 2], [0, 0, 0, 8, 5, 0, 2], [0, 0, 1, 9, 3, 0, 1], [0, 2, 0, 10, 12, 0, 10], [0, 3, 0, 17, 4, 0, 0], [0, 4, 0, 21, 1, 0, 4]]
+[[['fight', 4], ['fight2', 12], ['circle', 0], ['check', 24], ['shift', 0], ['kill', 4], ['noise', 10]], [['fight', 2], ['fight2', 2], ['circle', 0], ['check', 20], ['shift', 8], ['kill', 1], ['noise', 17]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 7], ['shift', 2], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 2], ['circle', 5], ['check', 10], ['shift', 0], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 2], ['circle', 0], ['check', 22], ['shift', 0], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 8], ['shift', 5], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 0], ['circle', 1], ['check', 9], ['shift', 3], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 2], ['circle', 0], ['check', 10], ['shift', 12], ['kill', 0], ['noise', 10]], [['fight', 0], ['fight2', 3], ['circle', 0], ['check', 17], ['shift', 4], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 4], ['circle', 0], ['check', 21], ['shift', 1], ['kill', 0], ['noise', 4]]]
+([5, 6, 3, 3, 3, 3, 4, 4, 3, 4], [0, 0, 0, 5, 3, 1, 1, 0])
+
+Controller Scores Fitness:
+[[1, 2, 24, 19, 14, 0, 0], [4, 6, 0, 19, 9, 0, 6], [1, 5, 1, 13, 8, 0, 6], [0, 0, 1, 12, 1, 0, 0], [0, 2, 11, 14, 5, 0, 1], [0, 0, 14, 3, 2, 5, 3], [6, 6, 23, 21, 11, 0, 0], [4, 1, 0, 16, 3, 0, 4], [0, 0, 0, 11, 2, 0, 9], [3, 0, 0, 6, 0, 0, 1]]
+[[['fight', 1], ['fight2', 2], ['circle', 24], ['check', 19], ['shift', 14], ['kill', 0], ['noise', 0]], [['fight', 4], ['fight2', 6], ['circle', 0], ['check', 19], ['shift', 9], ['kill', 0], ['noise', 6]], [['fight', 1], ['fight2', 5], ['circle', 1], ['check', 13], ['shift', 8], ['kill', 0], ['noise', 6]], [['fight', 0], ['fight2', 0], ['circle', 1], ['check', 12], ['shift', 1], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 2], ['circle', 11], ['check', 14], ['shift', 5], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 14], ['check', 3], ['shift', 2], ['kill', 5], ['noise', 3]], [['fight', 6], ['fight2', 6], ['circle', 23], ['check', 21], ['shift', 11], ['kill', 0], ['noise', 0]], [['fight', 4], ['fight2', 1], ['circle', 0], ['check', 16], ['shift', 3], ['kill', 0], ['noise', 4]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 11], ['shift', 2], ['kill', 0], ['noise', 9]], [['fight', 3], ['fight2', 0], ['circle', 0], ['check', 6], ['shift', 0], ['kill', 0], ['noise', 1]]] 
+
+([5, 5, 6, 3, 5, 5, 5, 5, 3, 3], [0, 0, 0, 3, 0, 6, 1, 0])
+Average Number of Active Nodes:
+Novelty: 20.1Fitness: 19.2
+
+
+----RUN 6---
+Population Size: 20
+
+Fight Novelty:
+[1, 0, 2, 0, 0, 7, 1, 0, 0, 1]
+(5, 4, 1)
+Fight Fitness:
+[0, 0, 0, 1, 0, 8, 1, 2, 0, 0]
+(6, 3, 1)
+
+Fight 2 Novelty:
+[1, 0, 1, 0, 0, 4, 3, 0, 0, 5]
+(5, 5, 0)
+Fight 2 Fitness:
+[11, 0, 1, 4, 0, 3, 6, 4, 0, 1]
+(3, 5, 2)
+
+Circle Novelty:
+[0, 0, 0, 12, 10, 2, 0, 0, 0, 0]
+(7, 3, 0)
+Circle Fitness:
+[4, 10, 0, 0, 0, 24, 24, 0, 4, 24]
+(4, 3, 3)
+
+Check Novelty:
+[23, 18, 19, 19, 11, 14, 16, 0, 15, 24]
+(1, 3, 6)
+Check Fitness:
+[18, 13, 10, 1, 5, 24, 23, 6, 10, 9]
+(0, 7, 3)
+
+Shift Novelty:
+[1, 4, 2, 13, 11, 15, 5, 0, 13, 0]
+(2, 8, 0)
+Shift Fitness:
+[4, 4, 4, 0, 0, 3, 2, 20, 4, 2]
+(2, 7, 1)
+
+Kill Novelty:
+[0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+(9, 1, 0)
+Kill Fitness:
+[0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+(9, 1, 0)
+
+Noise Novelty:
+[2, 5, 5, 0, 1, 0, 10, 1, 4, 2]
+(2, 8, 0)
+Noise Fitness:
+[4, 3, 2, 7, 5, 3, 5, 6, 10, 0]
+(1, 9, 0)
+
+
+Controller Scores Novelty:
+[[1, 1, 0, 23, 1, 0, 2], [0, 0, 0, 18, 4, 0, 5], [2, 1, 0, 19, 2, 0, 5], [0, 0, 12, 19, 13, 1, 0], [0, 0, 10, 11, 11, 0, 1], [7, 4, 2, 14, 15, 0, 0], [1, 3, 0, 16, 5, 0, 10], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 15, 13, 0, 4], [1, 5, 0, 24, 0, 0, 2]]
+[[['fight', 1], ['fight2', 1], ['circle', 0], ['check', 23], ['shift', 1], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 18], ['shift', 4], ['kill', 0], ['noise', 5]], [['fight', 2], ['fight2', 1], ['circle', 0], ['check', 19], ['shift', 2], ['kill', 0], ['noise', 5]], [['fight', 0], ['fight2', 0], ['circle', 12], ['check', 19], ['shift', 13], ['kill', 1], ['noise', 0]], [['fight', 0], ['fight2', 0], ['circle', 10], ['check', 11], ['shift', 11], ['kill', 0], ['noise', 1]], [['fight', 7], ['fight2', 4], ['circle', 2], ['check', 14], ['shift', 15], ['kill', 0], ['noise', 0]], [['fight', 1], ['fight2', 3], ['circle', 0], ['check', 16], ['shift', 5], ['kill', 0], ['noise', 10]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 0], ['shift', 0], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 15], ['shift', 13], ['kill', 0], ['noise', 4]], [['fight', 1], ['fight2', 5], ['circle', 0], ['check', 24], ['shift', 0], ['kill', 0], ['noise', 2]]]
+([5, 3, 5, 4, 4, 5, 5, 1, 3, 4], [0, 1, 0, 2, 3, 4, 0, 0])
+
+Controller Scores Fitness:
+[[0, 11, 4, 18, 4, 0, 4], [0, 0, 10, 13, 4, 0, 3], [0, 1, 0, 10, 4, 0, 2], [1, 4, 0, 1, 0, 0, 7], [0, 0, 0, 5, 0, 0, 5], [8, 3, 24, 24, 3, 3, 3], [1, 6, 24, 23, 2, 0, 5], [2, 4, 0, 6, 20, 0, 6], [0, 0, 4, 10, 4, 0, 10], [0, 1, 24, 9, 2, 0, 0]]
+[[['fight', 0], ['fight2', 11], ['circle', 4], ['check', 18], ['shift', 4], ['kill', 0], ['noise', 4]], [['fight', 0], ['fight2', 0], ['circle', 10], ['check', 13], ['shift', 4], ['kill', 0], ['noise', 3]], [['fight', 0], ['fight2', 1], ['circle', 0], ['check', 10], ['shift', 4], ['kill', 0], ['noise', 2]], [['fight', 1], ['fight2', 4], ['circle', 0], ['check', 1], ['shift', 0], ['kill', 0], ['noise', 7]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 5], ['shift', 0], ['kill', 0], ['noise', 5]], [['fight', 8], ['fight2', 3], ['circle', 24], ['check', 24], ['shift', 3], ['kill', 3], ['noise', 3]], [['fight', 1], ['fight2', 6], ['circle', 24], ['check', 23], ['shift', 2], ['kill', 0], ['noise', 5]], [['fight', 2], ['fight2', 4], ['circle', 0], ['check', 6], ['shift', 20], ['kill', 0], ['noise', 6]], [['fight', 0], ['fight2', 0], ['circle', 4], ['check', 10], ['shift', 4], ['kill', 0], ['noise', 10]], [['fight', 0], ['fight2', 1], ['circle', 24], ['check', 9], ['shift', 2], ['kill', 0], ['noise', 0]]]
+([5, 4, 4, 4, 2, 7, 6, 5, 4, 4], [0, 0, 1, 0, 5, 2, 1, 1])
+
+Average Number of Active Nodes:
+Novelty: 24.8Fitness: 21.8
+
+
+----RUN 5---
+Population Size: 20
+
+Fight Novelty:
+[0, 0, 1, 4, 5, 2, 0, 1, 0, 0]
+(5, 5, 0)
+Fight Fitness:
+[1, 2, 2, 0, 0, 2, 3, 1, 0, 0]
+(4, 6, 0)
+
+Fight 2 Novelty:
+[1, 1, 0, 0, 1, 0, 7, 1, 2, 0]
+(4, 5, 1)
+Fight 2 Fitness:
+[0, 0, 0, 6, 0, 3, 1, 7, 11, 8]
+(4, 2, 4)
+
+Circle Novelty:
+[0, 0, 11, 0, 3, 0, 23, 17, 0, 0]
+(6, 2, 2)
+Circle Fitness:
+[1, 0, 11, 1, 16, 24, 1, 1, 24, 24]
+(1, 5, 4)
+
+Check Novelty:
+[14, 13, 23, 23, 2, 13, 19, 16, 2, 8]
+(0, 6, 4)
+Check Fitness:
+[14, 0, 22, 14, 16, 20, 8, 23, 24, 23]
+(1, 3, 6)
+
+Shift Novelty:
+[1, 0, 1, 0, 14, 0, 12, 5, 1, 0]
+(4, 6, 0)
+Shift Fitness:
+[4, 4, 3, 4, 8, 2, 4, 11, 6, 3]
+(0, 10, 0)
+
+Kill Novelty:
+[0, 0, 0, 2, 9, 0, 0, 0, 1, 0]
+(7, 3, 0)
+Kill Fitness:
+[0, 0, 0, 10, 0, 0, 0, 0, 0, 0]
+(9, 1, 0)
+
+Noise Novelty:
+[1, 1, 0, 1, 6, 8, 15, 0, 0, 0]
+(4, 6, 0)
+Noise Fitness:
+[6, 6, 1, 5, 0, 4, 4, 4, 7, 13]
+(1, 9, 0)
+
+
+Controller Scores Novelty:
+[[0, 1, 0, 14, 1, 0, 1], [0, 1, 0, 13, 0, 0, 1], [1, 0, 11, 23, 1, 0, 0], [4, 0, 0, 23, 0, 2, 1], [5, 1, 3, 2, 14, 9, 6], [2, 0, 0, 13, 0, 0, 8], [0, 7, 23, 19, 12, 0, 15], [1, 1, 17, 16, 5, 0, 0], [0, 2, 0, 2, 1, 1, 0], [0, 0, 0, 8, 0, 0, 0]]
+[[['fight', 0], ['fight2', 1], ['circle', 0], ['check', 14], ['shift', 1], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 1], ['circle', 0], ['check', 13], ['shift', 0], ['kill', 0], ['noise', 1]], [['fight', 1], ['fight2', 0], ['circle', 11], ['check', 23], ['shift', 1], ['kill', 0], ['noise', 0]], [['fight', 4], ['fight2', 0], ['circle', 0], ['check', 23], ['shift', 0], ['kill', 2], ['noise', 1]], [['fight', 5], ['fight2', 1], ['circle', 3], ['check', 2], ['shift', 14], ['kill', 9], ['noise', 6]], [['fight', 2], ['fight2', 0], ['circle', 0], ['check', 13], ['shift', 0], ['kill', 0], ['noise', 8]], [['fight', 0], ['fight2', 7], ['circle', 23], ['check', 19], ['shift', 12], ['kill', 0], ['noise', 15]], [['fight', 1], ['fight2', 1], ['circle', 17], ['check', 16], ['shift', 5], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 2], ['circle', 0], ['check', 2], ['shift', 1], ['kill', 1], ['noise', 0]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 8], ['shift', 0], ['kill', 0], ['noise', 0]]]
+([4, 3, 4, 4, 7, 3, 5, 5, 4, 1], [0, 1, 0, 2, 4, 2, 0, 1])
+
+Controller Scores Fitness:
+[[1, 0, 1, 14, 4, 0, 6], [2, 0, 0, 0, 4, 0, 6], [2, 0, 11, 22, 3, 0, 1], [0, 6, 1, 14, 4, 10, 5], [0, 0, 16, 16, 8, 0, 0], [2, 3, 24, 20, 2, 0, 4], [3, 1, 1, 8, 4, 0, 4], [1, 7, 1, 23, 11, 0, 4], [0, 11, 24, 24, 6, 0, 7], [0, 8, 24, 23, 3, 0, 13]]
+[[['fight', 1], ['fight2', 0], ['circle', 1], ['check', 14], ['shift', 4], ['kill', 0], ['noise', 6]], [['fight', 2], ['fight2', 0], ['circle', 0], ['check', 0], ['shift', 4], ['kill', 0], ['noise', 6]], [['fight', 2], ['fight2', 0], ['circle', 11], ['check', 22], ['shift', 3], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 6], ['circle', 1], ['check', 14], ['shift', 4], ['kill', 10], ['noise', 5]], [['fight', 0], ['fight2', 0], ['circle', 16], ['check', 16], ['shift', 8], ['kill', 0], ['noise', 0]], [['fight', 2], ['fight2', 3], ['circle', 24], ['check', 20], ['shift', 2], ['kill', 0], ['noise', 4]], [['fight', 3], ['fight2', 1], ['circle', 1], ['check', 8], ['shift', 4], ['kill', 0], ['noise', 4]], [['fight', 1], ['fight2', 7], ['circle', 1], ['check', 23], ['shift', 11], ['kill', 0], ['noise', 4]], [['fight', 0], ['fight2', 11], ['circle', 24], ['check', 24], ['shift', 6], ['kill', 0], ['noise', 7]], [['fight', 0], ['fight2', 8], ['circle', 24], ['check', 23], ['shift', 3], ['kill', 0], ['noise', 13]]] 
+([5, 3, 5, 6, 3, 6, 6, 6, 5, 5], [0, 0, 0, 2, 0, 4, 4, 0])
+
+Average Number of Active Nodes:
+Novelty: 23.7 Fitness: 22.7
+
+
+----RUN 3---
+Population Size: 20
+
+Fight Novelty:
+[0, 5, 0, 5, 8, 0, 0, 0, 0, 0]
+(7, 2, 1)
+Fight Fitness:
+[0, 0, 0, 0, 3, 3, 0, 0, 0, 0]
+(8, 2, 0)
+
+Fight 2 Novelty:
+[4, 7, 0, 4, 13, 0, 0, 0, 5, 2]
+(4, 4, 2)
+Fight 2 Fitness:
+[3, 0, 0, 2, 1, 1, 5, 0, 0, 0]
+(5, 5, 0)
+
+Circle Novelty:
+[24, 0, 0, 23, 1, 4, 0, 0, 0, 0]
+(6, 2, 2)
+Circle Fitness:
+[1, 0, 18, 1, 0, 0, 0, 2, 0, 0]
+(6, 3, 1)
+
+Check Novelty:
+[14, 24, 14, 24, 22, 9, 11, 12, 17, 22]
+(0, 5, 5)
+Check Fitness:
+[11, 24, 15, 11, 24, 23, 19, 8, 16, 14]
+(0, 5, 5)
+
+Shift Novelty:
+[11, 0, 3, 17, 16, 3, 2, 1, 6, 15]
+(1, 7, 2)
+Shift Fitness:
+[2, 0, 9, 13, 0, 0, 6, 16, 0, 5]
+(4, 5, 1)
+
+Kill Novelty:
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+(9, 1, 0)
+Kill Fitness:
+[0, 0, 0, 1, 1, 0, 0, 0, 3, 0]
+(7, 3, 0)
+
+Noise Novelty:
+[0, 1, 3, 7, 12, 0, 9, 7, 3, 4]
+(2, 8, 0)
+Noise Fitness:
+[8, 2, 1, 0, 3, 0, 1, 2, 1, 3]
+(2, 8, 0)
+
+
+Controller Scores Novelty:
+[[0, 4, 24, 14, 11, 0, 0], [5, 7, 0, 24, 0, 0, 1], [0, 0, 0, 14, 3, 0, 3], [5, 4, 23, 24, 17, 0, 7], [8, 13, 1, 22, 16, 0, 12], [0, 0, 4, 9, 3, 0, 0], [0, 0, 0, 11, 2, 0, 9], [0, 0, 0, 12, 1, 0, 7], [0, 5, 0, 17, 6, 1, 3], [0, 2, 0, 22, 15, 0, 4]]
+[[['fight', 0], ['fight2', 4], ['circle', 24], ['check', 14], ['shift', 11], ['kill', 0], ['noise', 0]], [['fight', 5], ['fight2', 7], ['circle', 0], ['check', 24], ['shift', 0], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 14], ['shift', 3], ['kill', 0], ['noise', 3]], [['fight', 5], ['fight2', 4], ['circle', 23], ['check', 24], ['shift', 17], ['kill', 0], ['noise', 7]], [['fight', 8], ['fight2', 13], ['circle', 1], ['check', 22], ['shift', 16], ['kill', 0], ['noise', 12]], [['fight', 0], ['fight2', 0], ['circle', 4], ['check', 9], ['shift', 3], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 11], ['shift', 2], ['kill', 0], ['noise', 9]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 12], ['shift', 1], ['kill', 0], ['noise', 7]], [['fight', 0], ['fight2', 5], ['circle', 0], ['check', 17], ['shift', 6], ['kill', 1], ['noise', 3]], [['fight', 0], ['fight2', 2], ['circle', 0], ['check', 22], ['shift', 15], ['kill', 0], ['noise', 4]]]
+([4, 4, 3, 6, 6, 3, 3, 3, 5, 4], [0, 0, 0, 4, 3, 1, 2, 0])
+
+Controller Scores Fitness:
+[[0, 3, 1, 11, 2, 0, 8], [0, 0, 0, 24, 0, 0, 2], [0, 0, 18, 15, 9, 0, 1], [0, 2, 1, 11, 13, 1, 0], [3, 1, 0, 24, 0, 1, 3], [3, 1, 0, 23, 0, 0, 0], [0, 5, 0, 19, 6, 0, 1], [0, 0, 2, 8, 16, 0, 2], [0, 0, 0, 16, 0, 3, 1], [0, 0, 0, 14, 5, 0, 3]]
+[[['fight', 0], ['fight2', 3], ['circle', 1], ['check', 11], ['shift', 2], ['kill', 0], ['noise', 8]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 24], ['shift', 0], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 0], ['circle', 18], ['check', 15], ['shift', 9], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 2], ['circle', 1], ['check', 11], ['shift', 13], ['kill', 1], ['noise', 0]], [['fight', 3], ['fight2', 1], ['circle', 0], ['check', 24], ['shift', 0], ['kill', 1], ['noise', 3]], [['fight', 3], ['fight2', 1], ['circle', 0], ['check', 23], ['shift', 0], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 5], ['circle', 0], ['check', 19], ['shift', 6], ['kill', 0], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 2], ['check', 8], ['shift', 16], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 16], ['shift', 0], ['kill', 3], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 14], ['shift', 5], ['kill', 0], ['noise', 3]]] 
+([5, 2, 4, 5, 5, 3, 4, 4, 3, 3], [0, 0, 1, 3, 3, 3, 0, 0])
+
+Average Number of Active Nodes:
+Novelty: 18.4 Fitness: 24.2
+
+----RUN 2---
+Population Size: 20
+
+Fight Novelty:
+[0, 0, 2, 0, 7, 0, 0, 0, 0, 1]
+(7, 2, 1)
+Fight Fitness:
+[2, 5, 3, 0, 0, 3, 1, 0, 0, 0]
+(5, 5, 0)
+
+Fight 2 Novelty:
+[0, 0, 0, 0, 0, 0, 1, 0, 2, 2]
+(7, 3, 0)
+Fight 2 Fitness:
+[0, 5, 4, 4, 5, 1, 1, 4, 1, 0]
+(2, 8, 0)
+
+Circle Novelty:
+[0, 0, 0, 0, 6, 0, 0, 0, 0, 0]
+(9, 1, 0)
+Circle Fitness:
+[0, 1, 15, 24, 0, 0, 0, 5, 0, 4]
+(5, 4, 1)
+
+Check Novelty:
+[3, 8, 24, 16, 22, 8, 16, 18, 14, 13]
+(0, 5, 5)
+Check Fitness:
+[24, 9, 16, 1, 15, 13, 1, 5, 17, 6]
+(0, 7, 3)
+
+Shift Novelty:
+[0, 0, 1, 1, 3, 12, 5, 7, 12, 2]
+(2, 8, 0)
+Shift Fitness:
+[22, 7, 4, 1, 8, 1, 0, 5, 4, 1]
+(1, 8, 1)
+
+Kill Novelty:
+[0, 0, 2, 0, 0, 4, 0, 0, 0, 1]
+(7, 3, 0)
+Kill Fitness:
+[1, 0, 3, 2, 0, 0, 0, 0, 0, 0]
+(7, 3, 0)
+
+Noise Novelty:
+[5, 0, 1, 0, 0, 3, 3, 7, 6, 3]
+(3, 7, 0)
+Noise Fitness:
+[0, 8, 0, 2, 4, 0, 2, 3, 17, 3]
+(3, 6, 1)
+
+
+Controller Scores Novelty:
+[[0, 0, 0, 3, 0, 0, 5], [0, 0, 0, 8, 0, 0, 0], [2, 0, 0, 24, 1, 2, 1], [0, 0, 0, 16, 1, 0, 0], [7, 0, 6, 22, 3, 0, 0], [0, 0, 0, 8, 12, 4, 3], [0, 1, 0, 16, 5, 0, 3], [0, 0, 0, 18, 7, 0, 7], [0, 2, 0, 14, 12, 0, 6], [1, 2, 0, 13, 2, 1, 3]]
+[[['fight', 0], ['fight2', 0], ['circle', 0], ['check', 3], ['shift', 0], ['kill', 0], ['noise', 5]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 8], ['shift', 0], ['kill', 0], ['noise', 0]], [['fight', 2], ['fight2', 0], ['circle', 0], ['check', 24], ['shift', 1], ['kill', 2], ['noise', 1]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 16], ['shift', 1], ['kill', 0], ['noise', 0]], [['fight', 7], ['fight2', 0], ['circle', 6], ['check', 22], ['shift', 3], ['kill', 0], ['noise', 0]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 8], ['shift', 12], ['kill', 4], ['noise', 3]], [['fight', 0], ['fight2', 1], ['circle', 0], ['check', 16], ['shift', 5], ['kill', 0], ['noise', 3]], [['fight', 0], ['fight2', 0], ['circle', 0], ['check', 18], ['shift', 7], ['kill', 0], ['noise', 7]], [['fight', 0], ['fight2', 2], ['circle', 0], ['check', 14], ['shift', 12], ['kill', 0], ['noise', 6]], [['fight', 1], ['fight2', 2], ['circle', 0], ['check', 13], ['shift', 2], ['kill', 1], ['noise', 3]]]
+([2, 1, 5, 2, 4, 4, 4, 3, 4, 6], [0, 1, 2, 1, 4, 1, 1, 0])
+Controller Scores Fitness:
+[[2, 0, 0, 24, 22, 1, 0], [5, 5, 1, 9, 7, 0, 8], [3, 4, 15, 16, 4, 3, 0], [0, 4, 24, 1, 1, 2, 2], [0, 5, 0, 15, 8, 0, 4], [3, 1, 0, 13, 1, 0, 0], [1, 1, 0, 1, 0, 0, 2], [0, 4, 5, 5, 5, 0, 3], [0, 1, 0, 17, 4, 0, 17], [0, 0, 4, 6, 1, 0, 3]]
+[[['fight', 2], ['fight2', 0], ['circle', 0], ['check', 24], ['shift', 22], ['kill', 1], ['noise', 0]], [['fight', 5], ['fight2', 5], ['circle', 1], ['check', 9], ['shift', 7], ['kill', 0], ['noise', 8]], [['fight', 3], ['fight2', 4], ['circle', 15], ['check', 16], ['shift', 4], ['kill', 3], ['noise', 0]], [['fight', 0], ['fight2', 4], ['circle', 24], ['check', 1], ['shift', 1], ['kill', 2], ['noise', 2]], [['fight', 0], ['fight2', 5], ['circle', 0], ['check', 15], ['shift', 8], ['kill', 0], ['noise', 4]], [['fight', 3], ['fight2', 1], ['circle', 0], ['check', 13], ['shift', 1], ['kill', 0], ['noise', 0]], [['fight', 1], ['fight2', 1], ['circle', 0], ['check', 1], ['shift', 0], ['kill', 0], ['noise', 2]], [['fight', 0], ['fight2', 4], ['circle', 5], ['check', 5], ['shift', 5], ['kill', 0], ['noise', 3]], [['fight', 0], ['fight2', 1], ['circle', 0], ['check', 17], ['shift', 4], ['kill', 0], ['noise', 17]], [['fight', 0], ['fight2', 0], ['circle', 4], ['check', 6], ['shift', 1], ['kill', 0], ['noise', 3]]] 
+
+([4, 6, 6, 6, 4, 4, 4, 5, 4, 4], [0, 0, 0, 0, 6, 1, 3, 0])
+Average Number of Active Nodes:
+Novelty: 19.9Fitness: 22.5

@@ -21,7 +21,7 @@ def runEvents(controllers, field_of_view, left_sensor_angle, right_sensor_angle,
     :return: None
     """
 
-    runNumber = 5       # Run number - manually set for each trial - saves to dataRoundOne.txt to distinguish data
+    runNumber = 5       # Run number - manually set for each trial - saves to data3.txt to distinguish data
 
     all_robots = []     # A list to hold all of the robots (for postprocessing)
     all_ts = []         # A list to hold all time steps (for postprocessing)
@@ -504,7 +504,7 @@ def runCheckSim(screen_width, controller, animate=True, field_of_view=0.8 * np.p
     theta = 0
 
     # Lower "brightness" of pellet by half
-    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=2020)
+    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=202)
 
     # create robot
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=foodPellets,
@@ -579,7 +579,7 @@ def runSensorShiftSim(screen_width, controller, animate=True, field_of_view=0.8 
     y = 0
     theta = 0
 
-    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=2020)
+    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=20)
 
     # create robot
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=foodPellets,
@@ -654,7 +654,7 @@ def runSensorKillSim(screen_width, controller, animate=True, field_of_view=0.8 *
     y = 0
     theta = 0
 
-    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=2020)
+    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=712)
 
     # create robot
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=[],
@@ -730,10 +730,10 @@ def runNoiseSim(screen_width, controller, animate=True, field_of_view=0.8 * np.p
     theta = 0
 
     # Lower "brightness" of pellet by half
-    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=2020)
+    foodPellets, poisonPellets, allPellets = pg.generateRandomPellets(25, 0, 10, seed=38)
 
-    controller.left_noisemaker = BrownNoiseSource(2)
-    controller.right_noisemaker = BrownNoiseSource(2)
+    controller.left_noisemaker = BrownNoiseSource(1)
+    controller.right_noisemaker = BrownNoiseSource(1)
 
     # create robot
     robot = fr.ForagingRobot(x=x, y=y, controller=controller, left_food_sources=foodPellets,

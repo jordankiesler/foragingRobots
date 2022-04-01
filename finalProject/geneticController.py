@@ -278,7 +278,7 @@ def evolve(pop, robots, mutRate, numParents, numChildren, novelty=True):
 
     # Check to see if there are any bots with at least a score of one - if not, increase mutation rate and
     # allow all parents to spawn because they're all terrible
-    goodBots = [robot for robot in robots if (robot.foodEaten > 1 or robot.poisonEaten > 1)]
+    goodBots = [robot for robot in robots if robot.foodEaten > 3]
     if len(goodBots) == 0:
         mutRate = 0.5
         parents = random.choices(pop, k=numParents)

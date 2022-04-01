@@ -3,10 +3,12 @@ import numpy as np
 import sys
 import settings as st
 
+sys.path.insert(1, '..')
+from situsim_v1_2 import *
+from situsim_extensions.plots2 import *
+
 import geneticController as gc
 
-sys.path.insert(1, '..')
-from situsim_extensions.plots2 import *
 
 
 def do_plots(all_ts, agents, foods_and_poisons):
@@ -96,7 +98,7 @@ def plotRobot(robot, ts):
     plt.plot(x, y, label="Velocity")
     plt.title(f"Robot velocity")
     plt.xlabel("Time")
-    plt.ylabel("Velocity")
+    plt.ylabel("Velocity, Acceleration")
     plt.ylim(-10, 10)
     plt.legend()
 
@@ -106,7 +108,9 @@ def plotRobot(robot, ts):
     plt.plot(x, y)
     plt.ylim(-20, 20)                       # Force size plot so we can see robot's trajectory to scale of arena
     plt.xlim(-20, 20)
-    plt.title("Robot position")
+    plt.title("Robot Trajectory")
+    plt.xlabel("x")
+    plt.ylabel("y")
 
     plt.show()
 
@@ -119,10 +123,37 @@ def calculateScores(scores):
     :return:
     """
     countedList = [sum([1 if i else 0 for i in x]) for x in scores]
-    newCount = [countedList.count(x) for x in range(0, 7)]
+    newCount = [countedList.count(x) for x in range(0, 8)]
     print(countedList, newCount)
 
     return countedList, newCount
+
+
+def plotBarChart():
+    """
+    Plot bar chart of summary values for run 6
+    :return: bar chart
+    """
+
+    plt.title("Performance of Novelty vs Fitness-Evolved Controllers\nwith Binary Performance Metric for a Single Run")
+
+    X = ['Foraging\nCompetition I', 'Foraging\nCompetition II', 'Circle of Pellets', 'Shifted Sensors', 'Left Sensor\nElimination', 'Controller Noise']
+    novelty = [0.4, 0.7, 0.45, 0.75, 0.20, 0.7]
+    fitness = [0.3, 0.4, 0.4, 0.8, 0.175, 0.6]
+
+    X_axis = np.arange(len(X))
+
+    plt.bar(X_axis - 0.2, novelty, 0.4, label='Novelty')
+    plt.bar(X_axis + 0.2, fitness, 0.4, label='Fitness')
+
+    plt.xticks(X_axis, X)
+    plt.xticks(rotation=45, ha="right")
+    plt.ylabel("Percent Successful")
+    plt.legend(loc="upper left")
+
+    plt.tight_layout()
+
+    plt.show()
 
 
 def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circleFit, checkNov, checkFit, shiftNov,
@@ -136,7 +167,7 @@ def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circ
 
     # Text to be saved. I realized after I did it this way I could have probably used some loops but...too late
     text = f"----RUN {runNum}---\n" \
-           f"Population Size: {st.MU + st.LAMBDA}\n\n" \
+           f"Population Size: {st.LAMBDA}\n\n" \
            f"Fight Novelty:\n" \
            f"{fightNov}\n" \
            f"{len([x for x in fightNov if x == 0]), len([x for x in fightNov if 0 < x <= 5]), len([x for x in fightNov if x > 5])}\n" \
@@ -183,17 +214,17 @@ def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circ
            f"Controller Scores Novelty:\n" \
            f"{[[y[1] for y in x.allScores] for x in trolls if x.nov is True]}\n" \
            f"{[x.allScores for x in trolls if x.nov is True]}\n" \
-           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is True])}\n" \
+           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is True])}\n\n" \
            f"Controller Scores Fitness:\n" \
            f"{[[y[1] for y in x.allScores] for x in trolls if x.nov is False]}\n" \
-           f"{[x.allScores for x in trolls if x.nov is False]} \n\n" \
-           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is False])}\n" \
+           f"{[x.allScores for x in trolls if x.nov is False]} \n" \
+           f"{calculateScores([[y[1] for y in x.allScores] for x in trolls if x.nov is False])}\n\n" \
            f"Average Number of Active Nodes:\n" \
            f"Novelty: {gc.calculateAvgActiveNodes([x for x in trolls if x.nov is True])}" \
            f"Fitness: {gc.calculateAvgActiveNodes([x for x in trolls if x.nov is False])}"
 
-    # Save text to a file called dataRoundTwo.txt
-    with open("dataRoundTwo.txt", "a+") as file:
+    # Save text to a file
+    with open("newData.txt", "a+") as file:
         # Move read cursor to the start of file.
         file.seek(0)
         # If file is not empty then append '\n'
@@ -205,9 +236,5 @@ def recordInfo(runNum, fightNov, fightFit, fight2Nov, fight2Fit, circleNov, circ
 
 
 if __name__ == '__main__':
-    scores = \
-        [[0, 0, 7, 12, 0, 0, 0], [4, 7, 23, 1, 2, 0, 4], [0, 0, 3, 2, 9, 0, 0], [0, 0, 17, 11, 15, 0, 7],
-         [0, 0, 9, 13, 2, 0, 5], [1, 4, 24, 17, 4, 2, 0], [2, 2, 20, 16, 8, 0, 7], [5, 0, 0, 16, 0, 5, 0],
-         [0, 0, 0, 13, 3, 0, 0], [2, 0, 2, 9, 3, 10, 2]]
 
-    calculateScores(scores)
+    plotBarChart()
